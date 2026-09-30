@@ -1,13 +1,23 @@
-# SentinelGate Demo
+# SentinelGate public demo
 
-Static online prototype for the SentinelGate AI Agent Assurance platform.
+A static public demo of the SentinelGate agent acceptance and assurance workspace.
 
-This repository contains demo/mock data only. It does not connect to production systems, credentials, databases, or external APIs.
+## Design authority
 
-## GitHub Pages
+`DESIGN.md` is the canonical visual design contract. UI changes must follow it.
 
-Publish from `main` / repository root.
+## Public-demo boundary
 
-Expected URL when the repository is named `sentinelgate-demo`:
+- Synthetic records only
+- No production connections
+- No credentials
+- No customer or internal evidence
+- No operational agent execution
 
-`https://f2h2dai.github.io/sentinelgate-demo/`
+## Local preview
+
+```powershell
+python -m http.server 8787 --bind 127.0.0.1
+```
+
+Open `http://127.0.0.1:8787`.

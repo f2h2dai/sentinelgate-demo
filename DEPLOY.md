@@ -1,26 +1,21 @@
-# Publish with GitHub CLI (PowerShell)
+# Update the existing SentinelGate GitHub Pages demo
+
+Existing repository: `f2h2dai/sentinelgate-demo`
+
+From your local repository:
 
 ```powershell
-cd C:\AI\sentinelgate-demo
+cd C:\AI\sentinelgate-github-pages\sentinelgate-github-pages
 
-git init
-git add .
-git commit -m "Publish SentinelGate demo"
-git branch -M main
-
-gh repo create f2h2dai/sentinelgate-demo --public --source=. --remote=origin --push
-
-gh api --method POST repos/f2h2dai/sentinelgate-demo/pages `
-  -f build_type=legacy `
-  -f 'source[branch]=main' `
-  -f 'source[path]=/'
+# Copy the redesigned files into this folder first, then:
+git status
+git add index.html README.md DESIGN.md .nojekyll
+git commit -m "Apply SentinelGate DESIGN.md and review-workspace redesign"
+git push
 ```
 
-If Pages already exists, use:
+GitHub Pages is already configured from `main` at `/`. Pushing to `main` triggers a rebuild.
 
-```powershell
-gh api --method PUT repos/f2h2dai/sentinelgate-demo/pages `
-  -f build_type=legacy `
-  -f 'source[branch]=main' `
-  -f 'source[path]=/'
-```
+Live demo:
+
+`https://f2h2dai.github.io/sentinelgate-demo/`
