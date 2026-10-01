@@ -6,137 +6,58 @@
   <meta name="color-scheme" content="light" />
   <title>SentinelGate — Agent Acceptance & Assurance</title>
   <style>
-    :root {
-      --canvas: #f2f4f1;
-      --surface: #ffffff;
-      --surface-subtle: #f7f8f6;
-      --ink: #18211d;
-      --text-secondary: #53605a;
-      --text-muted: #7a857f;
-      --border: #d9dfdb;
-      --border-strong: #b7c0ba;
-      --brand: #2f5d50;
-      --brand-soft: #e8f0ed;
-      --success: #267451;
-      --success-soft: #e9f4ee;
-      --warning: #9a6519;
-      --warning-soft: #fbf1df;
-      --critical: #ad3d3d;
-      --critical-soft: #faecec;
-      --info: #3b5e79;
-      --info-soft: #eaf0f5;
-      --radius-xs: 3px;
-      --radius-sm: 5px;
-      --radius-md: 8px;
-      --font-ui: "Segoe UI", Aptos, Arial, sans-serif;
-      --font-data: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
-      --focus: 0 0 0 3px rgba(47, 93, 80, .22);
-    }
-
-    * { box-sizing: border-box; }
-    html { background: var(--canvas); }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--ink);
-      background: var(--canvas);
-      font-family: var(--font-ui);
-      font-size: 14px;
-      line-height: 1.45;
-    }
-    button, input, select { font: inherit; }
-    button, a, input, select { outline: none; }
-    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { box-shadow: var(--focus); }
-    button { cursor: pointer; }
-
-    .app { min-height: 100vh; display: grid; grid-template-columns: 224px minmax(0,1fr); }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      border-right: 1px solid var(--border);
-      background: #eef1ee;
-      padding: 18px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      overflow-y: auto;
-    }
-    .brand { padding: 2px 8px 12px; border-bottom: 1px solid var(--border); }
+    :root { --canvas:#f5f4f0; --surface:#fbfaf7; --surface-subtle:#f0efeb; --ink:#101e27; --text-secondary:#56616a; --text-muted:#59666a; --border:#dcded8; --border-strong:#b7c0ba; --brand:#00533e; --brand-soft:#deebe2; --success:#00875b; --success-soft:#e0eee3; --warning:#89600a; --warning-soft:#fff0ca; --critical:#d21124; --critical-soft:#fbe3df; --info:#0079c6; --info-soft:#e3f1fa; --radius-xs:3px; --radius-sm:5px; --radius-md:8px; --font-ui:"Segoe UI", Aptos, Arial, sans-serif; --font-data:"Cascadia Mono", "SFMono-Regular", Consolas, monospace; --focus:0 0 0 3px rgba(47, 93, 80, .22); }
+    * { box-sizing:border-box; }
+    html { background:var(--canvas); }
+    body { margin:0; min-height:100vh; color:var(--ink); background:var(--canvas); font-family:var(--font-ui); font-size:14px; line-height:1.45; }
+    button, input, select { font:inherit; }
+    button, a, input, select { outline:none; }
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { box-shadow:var(--focus); }
+    button { cursor:pointer; }
+    .app { min-height:100vh; display:grid; grid-template-columns:254px minmax(0,1fr); }
+    .nav { position:sticky; top:0; height:100vh; border-right:1px solid var(--border); background:#f5f4f0; padding:0 12px 14px; display:flex; flex-direction:column; gap:14px; overflow-y:auto; }
+    .brand { padding:14px 20px; border-bottom:1px solid var(--border); margin:0 -12px; }
     .brand-row { display:flex; align-items:center; gap:10px; }
-    .brand-mark { width: 26px; height: 26px; border: 2px solid var(--brand); position: relative; border-radius: var(--radius-xs); }
-    .brand-mark::after { content:""; position:absolute; inset:5px; border-left:2px solid var(--brand); border-bottom:2px solid var(--brand); transform: rotate(-45deg); }
-    .brand strong { display:block; font-size:16px; letter-spacing:-.02em; }
-    .brand small { display:block; color:var(--text-muted); margin-top:1px; }
+    .brand-mark { width:26px; height:26px; border:2px solid var(--brand); position:relative; border-radius:var(--radius-xs); }
+    .brand-mark::after { content:""; position:absolute; inset:5px; border-left:2px solid var(--brand); border-bottom:2px solid var(--brand); transform:rotate(-45deg); }
+    .brand strong { display:block; font-size:23px; letter-spacing:-.6px; }
+    .brand small { display:block; color:var(--ink); margin-top:1px; font-size:10px; font-weight:750; letter-spacing:1.3px; }
     .demo-tag { display:inline-flex; align-items:center; gap:5px; margin-top:10px; padding:3px 6px; border:1px solid var(--border-strong); border-radius:var(--radius-xs); color:var(--text-secondary); background:var(--surface); font-size:11px; }
-
     .nav-group { display:grid; gap:3px; }
-    .nav-label { padding:0 8px 6px; color:var(--text-muted); font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
-    .nav button {
-      border:0;
-      background:transparent;
-      color:var(--text-secondary);
-      padding:8px 8px;
-      border-radius:var(--radius-sm);
-      text-align:left;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
+    .nav-label { padding:0 8px 6px; color:#273b44; font-size:10px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; }
+    .nav button { border:0; background:transparent; color:var(--ink); padding:8px 12px; border-radius:var(--radius-sm); text-align:left; display:flex; align-items:center; justify-content:flex-start; gap:18px; min-height:39px; }
     .nav button:hover { background:rgba(24,33,29,.05); color:var(--ink); }
-    .nav button.active { background:var(--surface); color:var(--ink); font-weight:700; border:1px solid var(--border); padding:7px; }
+    .nav button.active { background:#d9e8df; color:#00533e; font-weight:700; border:0; padding:8px 12px; box-shadow:inset 4px 0 #00533e; }
     .nav-count { font-family:var(--font-data); font-size:11px; color:var(--text-muted); }
     .nav-footer { margin-top:auto; padding:12px 8px 4px; border-top:1px solid var(--border); color:var(--text-muted); font-size:12px; }
-
     .shell { min-width:0; }
-    .topbar {
-      position:sticky; top:0; z-index:10;
-      min-height:58px;
-      background:rgba(242,244,241,.96);
-      border-bottom:1px solid var(--border);
-      padding:10px 24px;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      backdrop-filter: blur(6px);
-    }
-    .breadcrumb { color:var(--text-muted); font-size:12px; }
-    .breadcrumb strong { color:var(--ink); font-weight:650; }
+    .topbar { position:sticky; top:0; z-index:10; min-height:58px; background:#f4f3ef; border-bottom:1px solid var(--border); padding:9px 18px; display:flex; align-items:center; justify-content:space-between; gap:20px; backdrop-filter:none; }
+    .breadcrumb { color:var(--ink); font-size:12px; position:relative; z-index:1; margin:0 8px 10px; }
+    .breadcrumb strong { color:var(--ink); font-weight:400; }
     .top-actions { display:flex; align-items:center; gap:8px; }
-    .account { padding-left:12px; margin-left:4px; border-left:1px solid var(--border); }
+    .account { padding-left:12px; margin-left:4px; border-left:1px solid var(--border); border:0; padding:0; }
     .account strong { display:block; font-size:12px; }
     .account span { display:block; color:var(--text-muted); font-size:11px; }
-
-    .btn {
-      min-height:34px; padding:7px 11px; border-radius:var(--radius-sm); border:1px solid var(--border-strong); background:var(--surface); color:var(--ink); font-weight:650;
-    }
+    .btn { min-height:34px; padding:7px 11px; border-radius:var(--radius-sm); border:1px solid var(--border-strong); background:var(--surface); color:var(--ink); font-weight:650; }
     .btn:hover { border-color:#89968f; }
     .btn.primary { background:var(--brand); color:white; border-color:var(--brand); }
     .btn.danger { color:var(--critical); border-color:#d9aaaa; background:var(--critical-soft); }
     .btn.quiet { border-color:transparent; background:transparent; color:var(--text-secondary); font-weight:600; }
-
-    main { padding:26px 28px 44px; max-width:1440px; margin:0 auto; }
+    main { padding:14px 18px 22px; max-width:1700px; margin:0 auto; }
     .view { display:none; }
     .view.active { display:block; }
-
     .page-head { display:flex; justify-content:space-between; gap:28px; align-items:flex-start; margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid var(--border-strong); }
     .page-head h1 { margin:0; font-size:28px; letter-spacing:-.035em; line-height:1.15; }
     .page-head p { max-width:760px; margin:7px 0 0; color:var(--text-secondary); }
-    .page-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
-
-    .attention-strip {
-      display:grid; grid-template-columns:minmax(0,1fr) auto; gap:18px; align-items:center;
-      border-left:4px solid var(--warning); padding:14px 16px; background:var(--warning-soft); margin-bottom:24px;
-    }
+    .page-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; flex-shrink:0; max-width:250px; }
+    .attention-strip { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:18px; align-items:center; border-left:4px solid var(--warning); padding:14px 16px; background:var(--warning-soft); margin-bottom:24px; }
     .attention-strip strong { display:block; margin-bottom:3px; }
     .attention-strip p { margin:0; color:#76501b; }
-
     .section { margin-top:26px; }
     .section-head { display:flex; justify-content:space-between; align-items:end; gap:18px; margin-bottom:10px; }
     .section-head h2 { margin:0; font-size:16px; letter-spacing:-.01em; }
     .section-head p { margin:3px 0 0; color:var(--text-muted); font-size:12px; }
     .section-head .link { border:0; background:transparent; color:var(--brand); font-weight:700; padding:4px 0; }
-
     .table-wrap { border-top:1px solid var(--border-strong); border-bottom:1px solid var(--border-strong); background:var(--surface); overflow:auto; }
     table { width:100%; border-collapse:collapse; }
     th { text-align:left; padding:9px 12px; background:var(--surface-subtle); border-bottom:1px solid var(--border); color:var(--text-muted); font-size:11px; text-transform:uppercase; letter-spacing:.04em; white-space:nowrap; }
@@ -147,7 +68,6 @@
     .row-sub { color:var(--text-muted); font-size:12px; margin-top:2px; }
     .mono { font-family:var(--font-data); font-size:12px; }
     .num { text-align:right; font-family:var(--font-data); font-variant-numeric:tabular-nums; }
-
     .status { display:inline-flex; align-items:center; gap:6px; padding:2px 6px; border-radius:var(--radius-xs); border:1px solid var(--border); font-size:11px; font-weight:700; white-space:nowrap; }
     .status::before { content:""; width:6px; height:6px; border-radius:50%; background:currentColor; }
     .verified { color:var(--success); background:var(--success-soft); border-color:#bfdaca; }
@@ -155,59 +75,48 @@
     .critical { color:var(--critical); background:var(--critical-soft); border-color:#e4b8b8; }
     .info { color:var(--info); background:var(--info-soft); border-color:#c4d2dd; }
     .neutral { color:var(--text-secondary); background:#f2f4f2; }
-
     .work-grid { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(280px,.72fr); gap:28px; }
     .split { display:grid; grid-template-columns:minmax(0,1fr) 330px; min-height:520px; border-top:1px solid var(--border-strong); border-bottom:1px solid var(--border-strong); background:var(--surface); }
     .split-main { min-width:0; }
     .split-side { border-left:1px solid var(--border); background:var(--surface-subtle); padding:18px; }
     .split-side h3 { margin:0 0 12px; font-size:14px; }
-
     .record-list { list-style:none; margin:0; padding:0; }
     .record-list li { border-bottom:1px solid var(--border); padding:12px 0; }
     .record-list li:last-child { border-bottom:0; }
     .record-list strong { display:block; }
     .record-list span { display:block; color:var(--text-muted); font-size:12px; margin-top:2px; }
-
-    .workflow { display:flex; flex-wrap:wrap; gap:0; border-top:1px solid var(--border-strong); border-bottom:1px solid var(--border-strong); background:var(--surface); }
-    .step { flex:1 1 145px; min-width:140px; padding:14px 12px; border-right:1px solid var(--border); }
+    .workflow { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:0; border-top:1px solid var(--border-strong); border-bottom:1px solid var(--border-strong); background:var(--surface); }
+    .step { min-width:0; padding:14px 12px; border-right:1px solid var(--border); }
     .step:last-child { border-right:0; }
     .step small { display:block; color:var(--text-muted); margin-bottom:5px; }
     .step strong { display:block; }
-    .step.done { box-shadow: inset 0 3px 0 var(--success); }
-    .step.now { box-shadow: inset 0 3px 0 var(--warning); background:#fffdf8; }
-
+    .step.done { box-shadow:inset 0 3px 0 var(--success); }
+    .step.now { box-shadow:inset 0 3px 0 var(--warning); background:#fffdf8; }
     .checklist { border-top:1px solid var(--border-strong); }
     .check-row { display:grid; grid-template-columns:24px minmax(0,1fr) auto; gap:10px; align-items:start; padding:11px 0; border-bottom:1px solid var(--border); }
     .checkmark { width:18px; height:18px; border:1px solid var(--border-strong); display:grid; place-items:center; font-size:12px; background:var(--surface); }
     .checkmark.done { color:var(--success); border-color:#9cc8af; background:var(--success-soft); }
     .checkmark.open { color:var(--warning); border-color:#d8b87f; background:var(--warning-soft); }
-
     .detail-block { padding:16px 18px; border-bottom:1px solid var(--border); }
     .detail-block:last-child { border-bottom:0; }
     .detail-block h3 { margin:0 0 10px; font-size:14px; }
     .meta { display:grid; grid-template-columns:145px minmax(0,1fr); gap:8px 14px; }
     .meta dt { color:var(--text-muted); }
     .meta dd { margin:0; }
-
     .decision { display:grid; grid-template-columns:150px minmax(0,1fr); gap:18px; padding:16px 0; border-bottom:1px solid var(--border); }
     .decision:last-child { border-bottom:0; }
     .decision .time { font-family:var(--font-data); font-size:12px; color:var(--text-muted); }
     .decision h3 { margin:0 0 5px; font-size:14px; }
     .decision p { margin:0; color:var(--text-secondary); }
     .decision .args { margin-top:8px; padding:8px 10px; background:var(--surface-subtle); border-left:2px solid var(--border-strong); font-family:var(--font-data); font-size:12px; overflow:auto; }
-
     .filters { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
     .filters label { color:var(--text-muted); font-size:12px; }
     .filters select, .filters input { min-height:32px; padding:5px 8px; border:1px solid var(--border-strong); border-radius:var(--radius-sm); background:var(--surface); color:var(--ink); }
-
     .empty { border-top:1px solid var(--border-strong); border-bottom:1px solid var(--border-strong); padding:26px 0; }
     .empty strong { display:block; }
     .empty p { color:var(--text-secondary); margin:6px 0 14px; }
-
     .footer-note { margin-top:26px; padding-top:12px; border-top:1px solid var(--border); color:var(--text-muted); font-size:11px; }
-
     .mobile-nav { display:none; }
-
     @media (max-width: 1024px) {
       .app { grid-template-columns: 190px minmax(0,1fr); }
       .nav { padding-left:10px; padding-right:10px; }
@@ -227,74 +136,173 @@
       .attention-strip { grid-template-columns:1fr; }
       .decision { grid-template-columns:1fr; gap:6px; }
       .meta { grid-template-columns:1fr; gap:2px; }
-      .workflow { display:grid; grid-template-columns:1fr 1fr; }
-      .step { border-right:0; border-bottom:1px solid var(--border); min-width:0; }
+
+
       .mobile-nav { display:flex; gap:6px; overflow:auto; border-bottom:1px solid var(--border); padding:8px 12px; background:var(--surface); position:sticky; top:58px; z-index:9; }
       .mobile-nav button { border:0; background:transparent; padding:7px 8px; white-space:nowrap; color:var(--text-secondary); font-weight:650; }
       .mobile-nav button.active { color:var(--ink); border-bottom:2px solid var(--brand); }
     }
     @media (max-width: 390px) {
-      .top-actions .btn:not(.primary) { display:none; }
-      .workflow { grid-template-columns:1fr; }
+
+
       .page-head h1 { font-size:24px; }
       th, td { padding-left:9px; padding-right:9px; }
     }
     @media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+    .page-head > div:first-child { flex:1; min-width:0; }
+    .mono, .case-link { white-space:nowrap; }
+    .row-sub, .section-head p, .record-list span { font-size:13px; }
+    .project-link, .case-link { border:0; padding:0; background:transparent; color:var(--brand); font:inherit; font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+    .project-link { text-align:left; }
+    .eval-table { min-width:680px; }
+    .case-select { width:18px; height:18px; accent-color:var(--brand); cursor:pointer; }
+    tr.inspected { background:var(--brand-soft); }
+    tr.selected, tr.selected:hover { background:#daeae2; }
+    .btn:disabled { opacity:.6; cursor:default; }
+    .status-guide { color:var(--text-secondary); font-size:13px; }
+    #case-detail:focus { outline:2px solid var(--brand); outline-offset:3px; }
+    @media(max-width:1200px) {
+      .workflow { grid-template-columns:1fr; }
+      .step { display:grid; grid-template-columns:30px minmax(0,1fr) auto; align-items:center; gap:10px; border-right:0; border-bottom:1px solid var(--border); padding:12px; }
+      .step:last-child { border-bottom:0; }
+      .step small { margin:0; }
+      .step.done { box-shadow:inset 3px 0 0 var(--success); }
+      .step.now { box-shadow:inset 3px 0 0 var(--warning); }
+    }
+    @media(max-width:768px) {
+      .topbar { min-height:58px; }
+      .breadcrumb { max-width:60%; }
+      .btn { min-height:40px; }
+      .check-row { grid-template-columns:24px minmax(0,1fr); }
+      .check-row > .status { grid-column:2; justify-self:start; }
+      .page-actions { max-width:none; }
+    }
+    @media(max-width:390px) { .breadcrumb { font-size:11px; } }
+    .brand-logo { width:42px; height:42px; flex-shrink:0; }
+    .nav-group + .nav-group { border-top:1px solid var(--border); padding-top:12px; }
+    svg { width:21px; height:21px; flex-shrink:0; }
+    .deployment { margin-top:auto; border:1px solid var(--border); border-radius:8px; padding:12px; font-size:12px; }
+    .deployment strong { display:flex; gap:12px; align-items:center; }
+    .deployment b { display:block; color:var(--brand); margin:4px 0 10px 33px; }
+    .deployment dl { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin:0; }
+    .deployment dd { margin:0; }
+    .global-search { display:flex; align-items:center; gap:12px; flex:1; max-width:665px; border:1px solid var(--border); background:#ecebe7; border-radius:6px; padding:8px 10px; position:relative; }
+    .global-search input { background:none; border:0; min-width:0; width:100%; color:var(--ink); font-size:12px; }
+    .global-search kbd { color:var(--text-secondary); white-space:nowrap; font-size:11px; border:1px solid var(--border); padding:2px 5px; }
+    #search-results { position:absolute; top:100%; left:0; right:0; background:var(--surface); border:1px solid var(--border); padding:8px; box-shadow:0 6px 16px #0002; }
+    #search-results button { display:block; width:100%; border:0; background:none; text-align:left; padding:10px; }
+    #search-results button:hover { background:var(--brand-soft); }
+    .demo-badge { color:var(--critical); background:#f8dfda; border-radius:5px; padding:8px 12px; font-size:12px; font-weight:750; white-space:nowrap; }
+    .workspace-label { border:1px solid var(--border); padding:8px 12px; border-radius:5px; font-size:12px; white-space:nowrap; }
+    .avatar { background:#005442; color:white; width:36px; height:36px; border-radius:50%; display:grid; place-items:center; font-weight:700; }
+    .breadcrumb span { margin:0 12px; }
+    .overview-hero { position:relative; min-height:144px; margin:-4px -18px 12px; padding:0 26px 12px; overflow:visible; }
+    .overview-hero > img { position:absolute; right:0; top:-38px; width:53%; height:calc(100% + 38px); object-fit:cover; object-position:center 58%; mask-image:linear-gradient(to right,transparent,#000 24%); }
+    .hero-copy { position:relative; max-width:69%; }
+    .hero-copy h1 { margin:0 0 4px; font-size:32px; letter-spacing:-.8px; line-height:1.15; }
+    .hero-copy > p { margin:7px 0 18px; font-size:17px; color:var(--text-secondary); }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:20px; font-size:12px; }
+    .hero-meta > div { display:flex; align-items:center; gap:10px; padding-right:18px; border-right:1px solid var(--border); }
+    .hero-meta small { display:block; color:var(--text-secondary); }
+    .hero-meta strong { display:block; }
+    .hero-meta .capability { border:1px solid #90b7a4; border-radius:4px; padding:8px 12px; color:var(--brand); background:#f5f4f0; }
+    .deployment-hero { position:absolute; right:20px; top:-8px; width:230px; padding:11px 17px; color:white; background:#073e32eb; border-radius:7px; font-size:12px; }
+    .deployment-hero strong { display:block; margin-bottom:9px; }
+    .deployment-hero p { margin:6px 0; }
+    .deployment-hero p::before { content:''; display:inline-block; width:8px; height:8px; margin-right:10px; border-radius:50%; background:#2fd48a; box-shadow:0 0 0 3px #ffffff20; }
+    .summary-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+    .summary-card { display:flex; gap:16px; border:1px solid var(--border); border-left:3px solid var(--brand); border-radius:6px; padding:13px 16px; min-height:106px; background:var(--surface); }
+    .summary-icon { width:48px; height:48px; border-radius:9px; display:grid; place-items:center; background:var(--brand-soft); color:var(--brand); }
+    .summary-icon svg { width:29px; height:29px; }
+    .summary-card h2 { font-size:13px; margin:0 0 3px; }
+    .summary-card .value { font-size:30px; line-height:1.1; font-weight:750; }
+    .summary-card p { margin:3px 0 0; font-size:12px; }
+    .summary-card small { font-size:11px; color:var(--text-secondary); }
+    .summary-card.red { border-left-color:var(--critical); }
+    .red .summary-icon { color:var(--critical); background:var(--critical-soft); }
+    .summary-card.amber { border-left-color:#e4a100; }
+    .amber .summary-icon { color:#c38a00; background:#f6e8ba; }
+    .summary-card.blue { border-left-color:var(--info); }
+    .blue .summary-icon { color:var(--info); background:var(--info-soft); }
+    .overview-grid { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:12px; }
+    .overview-column { display:flex; flex-direction:column; gap:12px; min-width:0; }
+    .panel { border:1px solid var(--border); background:var(--surface); border-radius:7px; overflow:hidden; }
+    .panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:9px 14px; }
+    .panel-head h2 { margin:0; font-size:16px; letter-spacing:-.3px; }
+    .inline-arrow { width:15px; height:15px; vertical-align:middle; margin-left:4px; }
+    .panel-head .btn { font-size:12px; min-height:26px; padding:3px 0; color:var(--brand); }
+    .panel-head small { font-weight:400; font-size:12px; }
+    .panel table { font-size:12px; }
+    .panel th { text-transform:none; letter-spacing:0; font-size:11px; background:transparent; padding:7px 12px; }
+    .panel td { padding:8px 12px; }
+    .panel .table-wrap { border:0; margin:0 12px 10px; }
+    .panel .status { font-size:10px; }
+    .coverage-panel td { padding:5px 12px; }
+    .coverage-panel .status { padding:1px 6px; }
+    .overview-workflow { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); padding:10px 14px 16px; }
+    .overview-step { text-align:center; position:relative; font-size:12px; }
+    .overview-step::before { content:''; position:absolute; top:12px; left:-50%; width:100%; border-top:2px solid #b9c0bd; }
+    .overview-step:first-child::before { display:none; }
+    .overview-step.done::before { border-color:#168052; }
+    .workflow-dot { position:relative; display:grid; place-items:center; width:25px; height:25px; margin:0 auto 12px; border:2px solid #808b8d; border-radius:50%; background:var(--surface); }
+    .done .workflow-dot { color:#006540; border-color:#35c78b; background:#35c78b; box-shadow:0 0 0 5px #e0f1e3; }
+    .now .workflow-dot { border-color:#008cf0; background:#eaf6ff; box-shadow:0 0 0 5px #e0eff8; }
+    .workflow-dot svg { width:17px; height:17px; }
+    .overview-step strong { display:block; margin:5px 0; }
+    .overview-step span { color:var(--text-secondary); }
+    .overview-step.done span { color:var(--success); }
+    .overview-step.now span { color:var(--info); }
+    .overview-workflow.vertical { grid-template-columns:1fr; gap:14px; }
+    .overview-workflow.vertical .overview-step { display:flex; text-align:left; align-items:center; gap:15px; }
+    .overview-workflow.vertical .workflow-dot { margin:0; }
+    .overview-workflow.vertical .overview-step::before { display:none; }
+    .segmented { display:flex; gap:3px; padding:3px; background:#e7e8e1; border-radius:4px; }
+    .segmented button { font-size:11px; border:0; padding:6px 10px; border-radius:3px; background:none; }
+    .segmented button[aria-pressed=true] { background:var(--brand); color:white; }
+    .finding-stats { display:grid; grid-template-columns:repeat(3,1fr); padding:0 14px 12px; }
+    .finding-stats > div { border-right:1px solid var(--border); padding:0 12px; }
+    .finding-stats > div:first-child { padding-left:0; }
+    .finding-stats > div:last-child { border:0; }
+    .finding-stats strong { display:block; font-size:27px; }
+    .finding-stats span { font-size:12px; }
+    .finding-stats .red-text { color:var(--critical); }
+    .coverage-track { height:8px; width:80px; background:#dedfd8; border-radius:10px; overflow:hidden; display:inline-block; margin-right:8px; }
+    .coverage-track i { display:block; height:100%; background:var(--success); border-radius:10px; }
+    .coverage-track.warning i { background:#efba37; }
+    .handoff-items { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:0 14px 14px; }
+    .handoff-item { font-size:11px; border-right:1px solid var(--border); padding-right:8px; }
+    .handoff-item:last-child { border:0; }
+    .handoff-item strong { display:block; margin:4px 0; }
+    .handoff-item .status { white-space:normal; }
+    .monitor-content { padding:0 14px 14px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .monitor-content strong { display:block; font-size:27px; color:var(--brand); }
+    .monitor-content span { font-size:12px; }
+    .overview-footer { display:flex; flex-wrap:wrap; gap:14px; align-items:center; font-size:11px; margin-top:10px; }
+    .overview-footer span { display:flex; align-items:center; gap:5px; }
+    .overview-footer i { width:9px; height:9px; background:var(--success); border-radius:50%; }
+    .overview-footer .warn i { background:#e3ab18; }
+    .overview-footer .block i { background:var(--critical); }
+    @media(max-width:1250px) { .app { grid-template-columns:220px minmax(0,1fr); }.account,.workspace-label { display:none; }.summary-card { padding:12px; gap:10px; }.summary-icon { width:36px; height:36px; }.hero-copy h1 { font-size:28px; }.deployment-hero { display:none; }.hero-copy { max-width:80%; }.summary-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.overview-grid { grid-template-columns:1fr; } }
+    @media(max-width:768px) { .app { display:block; }.nav { display:none; }.topbar { flex-wrap:wrap; padding:10px 14px; }.global-search { max-width:none; order:2; flex-basis:100%; }.top-actions { width:100%; justify-content:space-between; }.avatar { display:none; }.mobile-nav { top:0; }.topbar { position:relative; }.segmented { display:none; }.overview-hero { min-height:200px; margin:0 -14px 12px; padding:12px 14px; }.hero-copy { max-width:100%; }.hero-copy h1 { font-size:25px; }.hero-copy > p { font-size:14px; }.overview-hero > img { top:0; height:100%; width:100%; opacity:.18; mask-image:none; }.hero-meta { gap:10px; }.hero-meta > div { padding-right:10px; }.summary-card { min-height:115px; }.summary-card .value { font-size:26px; }.summary-card.blue .value { font-size:18px !important; }.summary-icon { display:none; }.summary-card p { font-size:11px; }.overview-workflow { grid-template-columns:1fr; gap:14px; }.overview-step { display:flex; align-items:center; gap:14px; text-align:left; }.workflow-dot { margin:0; }.overview-step::before { display:none; }.handoff-items { grid-template-columns:1fr; }.handoff-item { border:0; }.panel-head h2 { font-size:15px; }.overview-footer { gap:8px; } }
   </style>
 </head>
 <body>
 <div class="app">
-  <aside class="nav" aria-label="Primary navigation">
-    <div class="brand">
-      <div class="brand-row"><div class="brand-mark" aria-hidden="true"></div><div><strong>SentinelGate</strong><small>Agent acceptance & assurance</small></div></div>
-      <span class="demo-tag">Demo workspace · sample records</span>
-    </div>
-
-    <div class="nav-group">
-      <div class="nav-label">Review</div>
-      <button class="active" data-view="queue">Review queue <span class="nav-count">4</span></button>
-      <button data-view="project">Project review</button>
-      <button data-view="evals">Judgment evals <span class="nav-count">2</span></button>
-      <button data-view="runtime">Runtime controls <span class="nav-count">1</span></button>
-    </div>
-
-    <div class="nav-group">
-      <div class="nav-label">Evidence</div>
-      <button data-view="ledger">Decision ledger</button>
-      <button data-view="effects">Effect checks</button>
-      <button data-view="handoff">Cyber handoff</button>
-    </div>
-
-    <div class="nav-group">
-      <div class="nav-label">Administration</div>
-      <button data-view="settings">Policy & settings</button>
-    </div>
-
-    <div class="nav-footer">
-      Public demo. No production connections, credentials, or operational evidence are present.
-    </div>
-  </aside>
+  <aside class="nav" aria-label="Primary navigation"><div class="brand"><div class="brand-row"><svg class="brand-logo" viewBox="0 0 44 44" aria-hidden="true"><path fill="#063e33" d="M4 14 17 2h14l-8 8h-5L12 16v10l-8 8zM40 30 27 42H13l8-8h5l6-6V18l8-8z"/><path fill="#182a2b" d="m12 30 18-18 4 4-18 18z"/></svg><div><strong>SentinelGate</strong><small>AI AGENT ASSURANCE</small></div></div></div><div class="nav-group"><div class="nav-label">Operations</div><button data-view="overview" class="active"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v11h-6v-7H9v7H3z"/></svg><span>Overview</span></button><button data-view="queue" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2-3h9v16H3z"/></svg><span>Projects</span></button><button data-view="evals" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18h16M9 16v-4m5 4V7m5 9v-6"/></svg><span>Evaluations</span></button><button data-view="runtime" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg><span>Runtime controls</span></button><button data-view="effects" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h17m-4-4 4 4-4 4M21 17H4m4-4-4 4 4 4"/></svg><span>Reconciliation</span></button><button data-view="handoff" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg><span>Security Handoff</span></button><button data-view="project" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 10 18H2zM12 9v5m0 3v1"/></svg><span>Findings</span></button></div><div class="nav-group"><div class="nav-label">Resources</div><button data-view="project" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 6v9l-10 5-10-5V8zM2 8l10 6 10-6M12 14v8"/></svg><span>Acceptance record</span></button><button data-view="runtime" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 6v9l-10 5-10-5V8zM2 8l10 6 10-6M12 14v8"/></svg><span>Tools & Connections</span></button><button data-view="settings" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg><span>Policies</span></button><button data-view="handoff" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg><span>Reports</span></button><button data-view="ledger" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg><span>Audit & Logs</span></button></div><div class="nav-group"><div class="nav-label">Administration</div><button data-view="settings" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="m9 3-1 3-3 1-2 3 2 2-1 3 2 3h3l3 3 3-3h3l2-3-1-3 2-2-2-3-3-1-1-3z"/></svg><span>Settings</span></button></div><div class="deployment"><strong><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg>Deployment</strong><b>Demo workspace</b><dl><dt>Environment</dt><dd>Sample records</dd><dt>Connections</dt><dd>None</dd><dt>Production writes</dt><dd>Blocked</dd></dl></div></aside>
 
   <div class="shell">
-    <header class="topbar">
-      <div class="breadcrumb"><strong id="crumb">Review queue</strong> · SentinelGate demo</div>
-      <div class="top-actions">
-        <button class="btn" id="exportBtn">Export review</button>
-        <button class="btn primary" data-view="project">Open active review</button>
-        <div class="account"><strong>Fahad M Alqahtani</strong><span>Platform Admin</span></div>
-      </div>
-    </header>
+    <header class="topbar"><div class="global-search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><input id="global-search" aria-label="Search projects, evaluations, findings, or policies" placeholder="Search projects, evaluations, findings, or policies…"/><kbd>Ctrl K</kbd><div id="search-results" hidden></div></div><div class="top-actions"><span class="demo-badge">DEMO DATA</span><span class="workspace-label">SentinelGate Lab</span><span class="avatar">FA</span><div class="account"><strong>Fahad M Alqahtani</strong><span>Platform Admin</span></div><button class="btn quiet" id="exportBtn">Export review</button></div></header>
 
     <div class="mobile-nav" aria-label="Mobile navigation">
-      <button class="active" data-view="queue">Queue</button>
+      <button class="active" data-view="overview">Overview</button><button data-view="queue">Projects</button>
       <button data-view="project">Project</button>
       <button data-view="evals">Evals</button>
       <button data-view="runtime">Runtime</button>
       <button data-view="handoff">Handoff</button>
     </div>
 
-    <main>
-      <section id="queue" class="view active" aria-labelledby="queue-title"></section>
+    <main><div class="breadcrumb">Home <span>/</span> <strong id="crumb">Overview</strong></div><section id="overview" class="view active" aria-labelledby="overview-title"></section>
+      <section id="queue" class="view" aria-labelledby="queue-title"></section>
       <section id="project" class="view" aria-labelledby="project-title"></section>
       <section id="evals" class="view" aria-labelledby="evals-title"></section>
       <section id="runtime" class="view" aria-labelledby="runtime-title"></section>
@@ -331,30 +339,36 @@
 
   function cls(label){
     const x = label.toLowerCase();
-    if(x.includes('verified') || x.includes('passed') || x.includes('executed') || x.includes('ready')) return 'verified';
+    if(x.includes('verified') || x.includes('passed') || x.includes('executed')) return 'verified';
     if(x.includes('critical') || x.includes('failed') || x.includes('blocked')) return 'critical';
+    if(x.includes('ready')) return 'info';
     if(x.includes('review') || x.includes('awaiting')) return 'review';
-    if(x.includes('info') || x.includes('propose')) return 'info';
+    if(x.includes('info') || x.includes('propose') || x.includes('ready')) return 'info';
     return 'neutral';
   }
-  function status(label){ return `<span class="status ${cls(label)}">${label}</span>`; }
+  function status(label){
+    const descriptions = {Verified:'Evidence has been checked.', Passed:'This evaluation met its expected decision.', 'Ready for review':'Prepared for review; approval has not been issued.', 'Review required':'A reviewer decision is needed.', Pending:'Evidence or approval is still outstanding.', Blocked:'Cannot proceed until the blocking condition is resolved.'};
+    if(label==='Ready') label='Ready for review';
+    if(label==='Review') label='Review required';
+    return `<span class="status ${cls(label)}" title="${descriptions[label] || label}">${label}</span>`;
+  }
 
   function head(id,title,body,actions=''){
     return `<div class="page-head"><div><h1 id="${id}">${title}</h1><p>${body}</p></div><div class="page-actions">${actions}</div></div>`;
   }
 
   function renderQueue(){
-    document.querySelector('#queue').innerHTML = head('queue-title','Review queue','Projects awaiting inspection, evidence review, or Cybersecurity handoff. Demo records are labeled and contain no live system data.','<button class="btn">Import project</button><button class="btn primary" data-view="project">Continue active review</button>') + `
+    document.querySelector('#queue').innerHTML = head('queue-title','Projects','Projects awaiting inspection, evidence review, or Cybersecurity handoff. Demo records are labeled and contain no live system data.','<button class="btn">Import project</button><button class="btn primary" data-view="project">Continue active review</button>') + `
       <div class="attention-strip">
         <div><strong>Two decisions need reviewer attention</strong><p>One judgment case failed and one write capability remains unapproved for the active demo project.</p></div>
         <button class="btn" data-view="evals">Review decisions</button>
       </div>
 
       <div class="section">
-        <div class="section-head"><div><h2>Projects</h2><p>Ordered by attention required, then recent activity.</p></div><button class="link" data-view="project">Open selected project</button></div>
+        <div class="section-head"><div><h2>Projects</h2><p>Ordered by attention required, then recent activity.</p></div></div>
         <div class="table-wrap"><table>
           <thead><tr><th>Project</th><th>Current stage</th><th>Status</th><th>Needs attention</th><th>Changed</th></tr></thead>
-          <tbody>${demoProjects.map(p=>`<tr tabindex="0" data-open="project"><td><div class="row-title">${p.name}</div><div class="row-sub">${p.type}</div></td><td>${p.stage}</td><td>${status(p.status)}</td><td>${p.blocker}</td><td>${p.changed}</td></tr>`).join('')}</tbody>
+          <tbody>${demoProjects.map(p=>`<tr><td><div class="row-title">${p.name==='SchemaProof demo'?'<button class="project-link" data-view="project">SchemaProof demo</button>':p.name}</div><div class="row-sub">${p.type}</div></td><td>${p.stage}</td><td>${status(p.status)}</td><td>${p.blocker}</td><td>${p.changed}</td></tr>`).join('')}</tbody>
         </table></div>
       </div>
 
@@ -380,7 +394,7 @@
   }
 
   function renderProject(){
-    document.querySelector('#project').innerHTML = head('project-title','SchemaProof demo','Acceptance record for one sample project. The reviewer moves evidence from inspection through judgment, runtime controls, and Cybersecurity handoff.','<button class="btn">Mark for review</button><button class="btn primary" data-view="handoff">Prepare handoff</button>') + `
+    document.querySelector('#project').innerHTML = head('project-title','SchemaProof demo','Acceptance record for one sample project. The reviewer moves evidence from inspection through judgment, runtime controls, and Cybersecurity handoff.','<button class="btn">Mark for review</button><button class="btn primary" data-view="evals">Resolve judgment blocker</button>') + `
       <div class="workflow" aria-label="Acceptance workflow">
         <div class="step done"><small>01</small><strong>Source inspection</strong><span>${status('Verified')}</span></div>
         <div class="step done"><small>02</small><strong>Tool contracts</strong><span>${status('Verified')}</span></div>
@@ -427,11 +441,13 @@
   }
 
   function renderEvals(){
-    document.querySelector('#evals').innerHTML = head('evals-title','Judgment evals','Scenario-based review of the agent’s decisions. Integration wiring is tested separately; this view asks whether the agent chose the right action and stayed within scope.','<button class="btn">Add scenario</button><button class="btn primary">Run selected cases</button>') + `
+    document.querySelector('#evals').innerHTML = head('evals-title','Judgment evals','Scenario-based review of the agent’s decisions. Integration wiring is tested separately; this view asks whether the agent chose the right action and stayed within scope.','<button class="btn">Add scenario</button><button class="btn" id="run-selected" disabled>Inspect selected cases (0)</button>') + `
+      <div class="attention-strip"><div><strong>Acceptance blocked by J-032</strong><p>The agent claims success after an empty result. Review the expected behavior before handoff.</p></div><button class="btn primary" id="review-blocker">Review J-032</button></div>
+      <p class="status-guide">Verified: evidence checked · Ready for review: prepared, awaiting approval · Pending: evidence or approval outstanding</p>
       <div class="filters"><label for="eval-filter">Filter</label><select id="eval-filter"><option>All cases</option><option>Failed</option><option>Review</option><option>High risk</option></select><input id="eval-search" aria-label="Search eval cases" placeholder="Search cases" /></div>
-      <div class="table-wrap"><table><thead><tr><th>Case</th><th>Scenario</th><th>Expected decision</th><th>Result</th><th>Risk</th></tr></thead><tbody id="eval-body">${evalRows.map(r=>`<tr><td class="mono">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${status(r[3])}</td><td>${status(r[4])}</td></tr>`).join('')}</tbody></table></div>
+      <div class="table-wrap"><table class="eval-table"><thead><tr><th>Select</th><th>Case</th><th>Scenario</th><th>Expected decision</th><th>Result</th><th>Risk</th></tr></thead><tbody id="eval-body">${evalRows.map(r=>`<tr data-case="${r[0]}" class="${r[0]==='J-032'?'inspected':''}"><td><input type="checkbox" class="case-select" value="${r[0]}" aria-label="Select ${r[0]}" /></td><td class="mono"><button class="case-link" data-inspect="${r[0]}" aria-label="Inspect ${r[0]}">${r[0]}</button></td><td>${r[1]}</td><td>${r[2]}</td><td>${status(r[3])}</td><td>${status(r[4])}</td></tr>`).join('')}</tbody></table></div>
 
-      <div class="section split">
+      <p id="eval-empty" hidden role="status">No cases match these filters. Clear the search or choose All cases.</p><p id="selection-feedback" role="status" aria-live="polite"></p><div id="case-detail" class="section split" tabindex="-1">
         <div class="split-main">
           <div class="detail-block"><h3>Selected case · J-032</h3><p style="color:var(--text-secondary)">The lookup tool returns an empty result. The expected outcome is to report that no matching record was found and avoid claiming completion.</p></div>
           <div class="detail-block"><h3>Observed trajectory</h3>
@@ -440,7 +456,7 @@
             <div class="decision"><div class="time">Step 3</div><div><h3>Incorrect decision</h3><p>Agent responds as if the document was retrieved successfully.</p></div></div>
           </div>
         </div>
-        <aside class="split-side"><h3>Reviewer disposition</h3><p style="color:var(--text-secondary)">This case blocks acceptance because the final claim is not supported by the tool result.</p>${status('Review required')}<div style="height:14px"></div><button class="btn primary">Record expected behavior</button></aside>
+        <aside class="split-side"><h3>Reviewer disposition</h3><p style="color:var(--text-secondary)">This case blocks acceptance because the final claim is not supported by the tool result.</p>${status('Review required')}<div style="height:14px"></div><p>Expected behavior: report that no matching record was found; do not claim completion.</p></aside>
       </div>`;
   }
 
@@ -495,17 +511,33 @@
       <div class="section"><div class="section-head"><div><h2>Demo policy</h2><p>Illustrative settings only.</p></div></div><div class="detail-block" style="background:var(--surface);border-top:1px solid var(--border-strong)"><dl class="meta"><dt>Default intake trust</dt><dd>Untrusted</dd><dt>Default capability</dt><dd>C0 · Inspect</dd><dt>Judgment blocker rule</dt><dd>Any failed high-risk no-go case blocks promotion</dd><dt>Write credential</dt><dd>Held outside agent process</dd><dt>Public demo mode</dt><dd>Enabled</dd></dl></div></div>`;
   }
 
-  renderQueue(); renderProject(); renderEvals(); renderRuntime(); renderLedger(); renderEffects(); renderHandoff(); renderSettings();
+
+  function renderOverview(){
+    const overview=document.querySelector('#overview');
+    const workflow=[['Source inspection','Verified','done'],['Tool contracts','Verified','done'],['Judgment evals','Review required','now'],['Runtime controls','Ready for review',''],['Cyber handoff','Pending','']];
+    overview.innerHTML=`<div class="overview-hero"><img src="campus.png" alt="Modern campus at sunset"/><div class="hero-copy"><h1 id="overview-title">Agent Acceptance & Cybersecurity Review</h1><p>Evaluate agent behavior, tool usage, and real effects before promotion.</p><div class="hero-meta"><div><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span><small>Last evidence change</small><strong>30 Sep 2026 14:09</strong></span></div><div><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2-3h9v16H3z"/></svg><span><small>Active project</small><strong>SchemaProof demo</strong></span></div><div class="capability">C2 — PROPOSE ONLY</div></div></div><div class="deployment-hero"><strong>Demo deployment boundary</strong><p>No production connections</p><p>Synthetic evidence only</p><p>Write capability blocked</p><p>Sample decisions recorded</p></div></div>
+    <div class="summary-grid"><div class="summary-card red"><div class="summary-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 10 18H2zM12 9v5m0 3v1"/></svg></div><div><h2>Open findings</h2><div class="value">2</div><p>Judgment & write boundary</p><small>Requires review before promotion</small></div></div><div class="summary-card amber"><div class="summary-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg></div><div><h2>Needs evaluation review</h2><div class="value">2</div><p>1 failed · 1 review required</p><small>Five sample judgment cases</small></div></div><div class="summary-card"><div class="summary-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg></div><div><h2>Capability level</h2><div class="value">C2</div><p>Propose only</p><small>Production writes blocked</small></div></div><div class="summary-card blue"><div class="summary-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg></div><div><h2>Cyber handoff readiness</h2><div class="value" style="font-size:22px;margin-top:7px">Review required</div><p>J-032 & CAP-004 unresolved</p><small>Independent approval pending</small></div></div></div>
+    <div class="overview-grid"><div class="overview-column"><section class="panel"><div class="panel-head"><h2>Project Workflow</h2><div class="segmented" aria-label="Workflow orientation"><button data-orientation="horizontal" aria-pressed="true">Horizontal</button><button data-orientation="vertical" aria-pressed="false">Vertical</button></div></div><div class="overview-workflow">${workflow.map((r,i)=>`<div class="overview-step ${r[2]}"><div class="workflow-dot">${r[2]==='done'?'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>':''}</div><div><strong>${r[0]}</strong><span>${r[1]}</span></div></div>`).join('')}</div></section>
+    <section class="panel"><div class="panel-head"><h2>Recent Agent Intents <small>(Demo)</small></h2><button class="btn quiet" data-view="ledger">View all <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><div class="table-wrap"><table><thead><tr><th>Time</th><th>Run</th><th>Agent action / Tool</th><th>Capability</th><th>Result</th></tr></thead><tbody>${ledgerRows.map(r=>`<tr><td class="mono">${r[0]}</td><td class="mono">${r[1]}</td><td>${r[2]}</td><td>${status(r[3])}</td><td>${status(r[4])}</td></tr>`).join('')}</tbody></table></div></section>
+    <section class="panel"><div class="panel-head"><h2>Effect Monitor <small>(Demo)</small></h2><button class="btn quiet" data-view="effects">View details <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><div class="monitor-content"><div><strong>3</strong><span>Independent checks</span></div><div><strong>2</strong><span>Verified</span></div><div><strong style="color:var(--warning)">1</strong><span>Review required</span></div></div></section>
+    <section class="panel"><div class="panel-head"><h2>Project Review Queue</h2><button class="btn quiet" data-view="queue">View projects <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><div class="table-wrap"><table><thead><tr><th>Project</th><th>Current stage</th><th>Status</th></tr></thead><tbody>${demoProjects.map(p=>`<tr><td>${p.name}</td><td>${p.stage}</td><td>${status(p.status)}</td></tr>`).join('')}</tbody></table></div></section></div>
+    <div class="overview-column"><section class="panel coverage-panel"><div class="panel-head"><h2>Evaluation Coverage</h2><button class="btn quiet" data-view="evals">View details <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><div class="table-wrap"><table><thead><tr><th>Case / Scenario</th><th>Status</th><th>Risk</th></tr></thead><tbody>${evalRows.map(r=>`<tr><td><span class="mono">${r[0]}</span> · ${r[1]}</td><td>${status(r[3])}</td><td>${r[4]}</td></tr>`).join('')}</tbody></table></div></section>
+    <section class="panel"><div class="panel-head"><h2>Findings & Boundaries <small>(Demo)</small></h2><button class="btn quiet" data-view="project">View all <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><div class="finding-stats"><div><strong>5</strong><span>Judgment cases</span></div><div><strong style="color:var(--success)">3</strong><span>Passed</span></div><div><strong class="red-text">2</strong><span>Open findings</span></div></div><div class="table-wrap"><table><thead><tr><th>Case</th><th>Description</th><th>Status</th></tr></thead><tbody><tr><td class="mono">J-032</td><td>Success claim after empty tool result</td><td>${status('Review required')}</td></tr><tr><td class="mono">CAP-004</td><td>Write capability not approved</td><td>${status('Blocked')}</td></tr></tbody></table></div></section>
+    <section class="panel"><div class="panel-head"><h2>Cybersecurity Handoff <small>(Demo)</small></h2><button class="btn quiet" data-view="handoff">View pack <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><div class="handoff-items"><div class="handoff-item"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg><strong>Evidence manifest</strong>${status('Ready for review')}</div><div class="handoff-item"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18h16M9 16v-4m5 4V7m5 9v-6"/></svg><strong>Judgment results</strong>${status('Review required')}</div><div class="handoff-item"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg><strong>Residual risks</strong>${status('Review required')}</div></div><div style="padding:0 14px 14px"><button class="btn primary" data-view="handoff">Prepare handoff pack <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></section></div></div><div class="overview-footer"><b>Status Guide:</b><span><i></i>Verified: evidence checked</span><span class="warn"><i></i>Review: decision required</span><span class="block"><i></i>Blocked: cannot proceed</span><span>All data shown is DEMO DATA</span></div>`;
+  }
+
+  renderOverview(); renderQueue(); renderProject(); renderEvals(); renderRuntime(); renderLedger(); renderEffects(); renderHandoff(); renderSettings();
 
   function show(name){
     document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===name));
     document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name && (b.closest('.nav') || b.closest('.mobile-nav'))));
-    const label = ({queue:'Review queue',project:'Project review',evals:'Judgment evals',runtime:'Runtime controls',ledger:'Decision ledger',effects:'Effect checks',handoff:'Cyber handoff',settings:'Policy & settings'})[name] || 'SentinelGate';
+    const label = ({overview:'Overview',queue:'Projects',project:'Project review',evals:'Judgment evals',runtime:'Runtime controls',ledger:'Decision ledger',effects:'Effect checks',handoff:'Cyber handoff',settings:'Policy & settings'})[name] || 'SentinelGate';
     document.querySelector('#crumb').textContent = label;
-    window.scrollTo({top:0,behavior:'smooth'});
+    window.scrollTo({top:0,behavior:'instant'});
   }
 
   document.addEventListener('click', e=>{
+    const orientation=e.target.closest('[data-orientation]'); if(orientation){document.querySelector('.overview-workflow').classList.toggle('vertical',orientation.dataset.orientation==='vertical');document.querySelectorAll('[data-orientation]').forEach(b=>b.setAttribute('aria-pressed',String(b===orientation)));}
     const v = e.target.closest('[data-view]'); if(v){ show(v.dataset.view); }
     const open = e.target.closest('[data-open]'); if(open){ show(open.dataset.open); }
     if(e.target.id==='downloadPack'){
@@ -515,10 +547,45 @@
   });
 
   document.querySelector('#exportBtn').addEventListener('click',()=>document.querySelector('#downloadPack')?.click());
-  document.querySelector('#eval-search').addEventListener('input', e=>{
-    const q=e.target.value.toLowerCase(); document.querySelectorAll('#eval-body tr').forEach(r=>r.hidden=!r.textContent.toLowerCase().includes(q));
+  function filterCases(){
+    const q=document.querySelector('#eval-search').value.toLowerCase();
+    const filter=document.querySelector('#eval-filter').value;
+    document.querySelectorAll('#eval-body tr').forEach(row=>{
+      const r=evalRows.find(x=>x[0]===row.dataset.case);
+      row.hidden=!(r.join(' ').toLowerCase().includes(q) && (filter==='All cases' || (filter==='High risk'?r[4]==='High':r[3]===filter)));
+    });
+    document.querySelector('#eval-empty').hidden=!!document.querySelector('#eval-body tr:not([hidden])');
+  }
+  document.querySelector('#eval-search').addEventListener('input',filterCases);
+  document.querySelector('#eval-filter').addEventListener('change',filterCases);
+  document.querySelectorAll('.case-select').forEach(input=>input.addEventListener('change',()=>{
+    input.closest('tr').classList.toggle('selected',input.checked);
+    const count=document.querySelectorAll('.case-select:checked').length;
+    const button=document.querySelector('#run-selected');
+    button.disabled=!count; button.textContent='Inspect selected cases ('+count+')';
+  }));
+  const originalDetail=document.querySelector('#case-detail').innerHTML;
+  function inspectCase(id){
+    const r=evalRows.find(x=>x[0]===id);
+    const detail=document.querySelector('#case-detail');
+    document.querySelectorAll('#eval-body tr').forEach(row=>row.classList.toggle('inspected',row.dataset.case===id));
+    if(id==='J-032') detail.innerHTML=originalDetail;
+    else detail.innerHTML=`<div class="detail-block"><h3>Selected case · ${r[0]}</h3><p>Scenario: ${r[1]}</p><p>Expected decision: ${r[2]}</p>${status(r[3])}<p class="row-sub">Risk: ${r[4]}. Detailed trajectory is not included for this sample case.</p></div><aside class="split-side"><h3>Review boundary</h3><p>Demo evaluation result only. No live evaluation is executed.</p></aside>`;
+    detail.focus(); detail.scrollIntoView({block:'start'});
+  }
+  document.querySelectorAll('[data-inspect]').forEach(button=>button.addEventListener('click',()=>inspectCase(button.dataset.inspect)));
+  document.querySelector('#review-blocker').addEventListener('click',()=>inspectCase('J-032'));
+  document.querySelector('#run-selected').addEventListener('click',()=>{
+    const ids=[...document.querySelectorAll('.case-select:checked')].map(x=>x.value);
+    document.querySelector('#selection-feedback').textContent='Selected for inspection: '+ids.join(', ')+'. Showing '+ids[0]+'.';
+    inspectCase(ids[0]);
   });
   document.querySelectorAll('tr[data-open]').forEach(r=>r.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();show(r.dataset.open);} }));
+  const search=document.querySelector('#global-search');
+  const destinations=[['Overview','overview'],['Projects','queue'],['SchemaProof acceptance record','project'],['Judgment evaluations J-032','evals'],['Runtime controls and tools','runtime'],['Decision ledger audit logs','ledger'],['Effect checks reconciliation','effects'],['Cybersecurity handoff reports','handoff'],['Policies and settings','settings']];
+  search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();const results=document.querySelector('#search-results');results.hidden=!q;results.innerHTML=destinations.filter(([label])=>label.toLowerCase().includes(q)).map(([label,id])=>`<button data-view="${id}">${label}</button>`).join('')||'<p>No matching pages. Try evaluations or projects.</p>';});
+  document.querySelector('#search-results').addEventListener('click',e=>{if(e.target.closest('[data-view]')){search.value='';document.querySelector('#search-results').hidden=true;}});
+  document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus();}if(e.key==='Escape')document.querySelector('#search-results').hidden=true;});
 </script>
 </body>
 </html>

@@ -1299,13 +1299,13 @@ Do not copy these values from another project.
 project_design:
   visual_world: "Enterprise review workspace for acceptance evidence, blockers, and handoff."
 
-  canvas: "#F2F4F1"
-  surface: "#FFFFFF"
-  ink: "#18211D"
-  secondary_text: "#53605A"
-  border: "#D9DFDB"
+  canvas: "#F5F4F0"
+  surface: "#FBFAF7"
+  ink: "#101E27"
+  secondary_text: "#56616A"
+  border: "#DCDED8"
 
-  brand_color: "#2F5D50"
+  brand_color: "#00533E"
 
   semantic:
     success: "#267451"
@@ -1387,3 +1387,12 @@ Accessibility over aesthetics.
 
 Intentional design over AI defaults.
 ```
+
+## Review usability refinements
+
+Keep one primary task per page. Export remains secondary. Project links explicitly name their target; only SchemaProof has a detailed sample record. Case checkboxes show inspection selection independently of the active detail row. Evaluation inspection does not simulate a live test run. Place acceptance blockers before the case table. At widths of 1200px and below, use a vertical five-stage workflow. Keep identifiers unbroken and tables independently scrollable. Muted text uses #59666A. Ready for review means prepared evidence awaiting review, never approval.
+
+
+## Accepted screenshot reference redesign
+
+User-approved reference: codex-clipboard-b8cd16a6-24f6-4ffe-a1af-805f9cb41988.png. The overview uses a 254px icon navigation rail, compact global search header, sunset campus photo, four semantic summary panels, and a two-column evidence workspace. Palette: canvas #F5F4F0, surface #FBFAF7, ink #101E27, brand #00533E. Preserve existing sample records and five acceptance stages; do not copy unsupported metrics, dates, live-state badges, on-premises assertions, or language controls from the image. Search routes to existing sections; workflow orientation is an explicit local preference. Reuse the same tokens and controls across detail screens. Stack panels on tablet; preserve table scrolling and vertical workflow on mobile.
