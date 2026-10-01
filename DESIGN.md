@@ -1396,3 +1396,10 @@ Keep one primary task per page. Export remains secondary. Project links explicit
 ## Accepted screenshot reference redesign
 
 User-approved reference: codex-clipboard-b8cd16a6-24f6-4ffe-a1af-805f9cb41988.png. The overview uses a 254px icon navigation rail, compact global search header, sunset campus photo, four semantic summary panels, and a two-column evidence workspace. Palette: canvas #F5F4F0, surface #FBFAF7, ink #101E27, brand #00533E. Preserve existing sample records and five acceptance stages; do not copy unsupported metrics, dates, live-state badges, on-premises assertions, or language controls from the image. Search routes to existing sections; workflow orientation is an explicit local preference. Reuse the same tokens and controls across detail screens. Stack panels on tablet; preserve table scrolling and vertical workflow on mobile.
+
+
+## Focused review layout
+
+User requested fewer dashboards. Replace the overview KPI cards and multi-panel monitoring layout with a single blocker strip, an unboxed acceptance workflow, and the project queue. Keep evaluation, ledger, effect, and handoff evidence on dedicated screens. Remove duplicate resource navigation and deployment tiles. Retain the reference palette, icons, and campus header.
+
+Dashboard panels are retained on a separate Dashboards page under Supporting views in the left navigation. The Overview stays focused on the review action, workflow, and project table.

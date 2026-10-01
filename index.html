@@ -206,26 +206,26 @@
     .hero-meta small { display:block; color:var(--text-secondary); }
     .hero-meta strong { display:block; }
     .hero-meta .capability { border:1px solid #90b7a4; border-radius:4px; padding:8px 12px; color:var(--brand); background:#f5f4f0; }
-    .deployment-hero { position:absolute; right:20px; top:-8px; width:230px; padding:11px 17px; color:white; background:#073e32eb; border-radius:7px; font-size:12px; }
-    .deployment-hero strong { display:block; margin-bottom:9px; }
-    .deployment-hero p { margin:6px 0; }
-    .deployment-hero p::before { content:''; display:inline-block; width:8px; height:8px; margin-right:10px; border-radius:50%; background:#2fd48a; box-shadow:0 0 0 3px #ffffff20; }
-    .summary-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
-    .summary-card { display:flex; gap:16px; border:1px solid var(--border); border-left:3px solid var(--brand); border-radius:6px; padding:13px 16px; min-height:106px; background:var(--surface); }
-    .summary-icon { width:48px; height:48px; border-radius:9px; display:grid; place-items:center; background:var(--brand-soft); color:var(--brand); }
-    .summary-icon svg { width:29px; height:29px; }
-    .summary-card h2 { font-size:13px; margin:0 0 3px; }
-    .summary-card .value { font-size:30px; line-height:1.1; font-weight:750; }
-    .summary-card p { margin:3px 0 0; font-size:12px; }
-    .summary-card small { font-size:11px; color:var(--text-secondary); }
-    .summary-card.red { border-left-color:var(--critical); }
-    .red .summary-icon { color:var(--critical); background:var(--critical-soft); }
-    .summary-card.amber { border-left-color:#e4a100; }
-    .amber .summary-icon { color:#c38a00; background:#f6e8ba; }
-    .summary-card.blue { border-left-color:var(--info); }
-    .blue .summary-icon { color:var(--info); background:var(--info-soft); }
-    .overview-grid { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:12px; }
-    .overview-column { display:flex; flex-direction:column; gap:12px; min-width:0; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .panel { border:1px solid var(--border); background:var(--surface); border-radius:7px; overflow:hidden; }
     .panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:9px 14px; }
     .panel-head h2 { margin:0; font-size:16px; letter-spacing:-.3px; }
@@ -259,36 +259,116 @@
     .segmented { display:flex; gap:3px; padding:3px; background:#e7e8e1; border-radius:4px; }
     .segmented button { font-size:11px; border:0; padding:6px 10px; border-radius:3px; background:none; }
     .segmented button[aria-pressed=true] { background:var(--brand); color:white; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media(max-width:1250px) { .brand strong {font-size:20px;} .brand small {font-size:9px;letter-spacing:.8px;} .app { grid-template-columns:220px minmax(0,1fr); }.account,.workspace-label { display:none; }.hero-copy h1 { font-size:28px; }.hero-copy { max-width:80%; } }
+    @media(max-width:768px) { .app { display:block; }.nav { display:none; }.topbar { flex-wrap:wrap; padding:10px 14px; }.global-search { max-width:none; order:2; flex-basis:100%; }.top-actions { width:100%; justify-content:space-between; }.avatar { display:none; }.mobile-nav { top:0; }.topbar { position:relative; }.segmented { display:none; }.overview-hero { min-height:200px; margin:0 -14px 12px; padding:12px 14px; }.hero-copy { max-width:100%; }.hero-copy h1 { font-size:25px; }.hero-copy > p { font-size:14px; }.overview-hero > img { top:0; height:100%; width:100%; opacity:.18; mask-image:none; }.hero-meta { gap:10px; }.hero-meta > div { padding-right:10px; }.overview-workflow { grid-template-columns:1fr; gap:14px; }.overview-step { display:flex; align-items:center; gap:14px; text-align:left; }.workflow-dot { margin:0; }.overview-step::before { display:none; }.panel-head h2 { font-size:15px; } }
+
+    .summary-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-bottom:12px; }
+
+    .summary-card { display:flex; gap:16px; border:1px solid var(--border); border-left:3px solid var(--brand); border-radius:6px; padding:13px 16px; min-height:106px; background:var(--surface); }
+
+    .summary-icon { width:48px; height:48px; border-radius:9px; display:grid; place-items:center; background:var(--brand-soft); color:var(--brand); }
+
+    .summary-icon svg { width:29px; height:29px; }
+
+    .summary-card h2 { font-size:13px; margin:0 0 3px; }
+
+    .summary-card .value { font-size:30px; line-height:1.1; font-weight:750; }
+
+    .summary-card p { margin:3px 0 0; font-size:12px; }
+
+    .summary-card small { font-size:11px; color:var(--text-secondary); }
+
+    .summary-card.red { border-left-color:var(--critical); }
+
+    .red .summary-icon { color:var(--critical); background:var(--critical-soft); }
+
+    .summary-card.amber { border-left-color:#e4a100; }
+
+    .amber .summary-icon { color:#c38a00; background:#f6e8ba; }
+
+    .summary-card.blue { border-left-color:var(--info); }
+
+    .blue .summary-icon { color:var(--info); background:var(--info-soft); }
+
+    .overview-grid { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:12px; }
+
+    .overview-column { display:flex; flex-direction:column; gap:12px; min-width:0; }
+
     .finding-stats { display:grid; grid-template-columns:repeat(3,1fr); padding:0 14px 12px; }
+
     .finding-stats > div { border-right:1px solid var(--border); padding:0 12px; }
+
     .finding-stats > div:first-child { padding-left:0; }
+
     .finding-stats > div:last-child { border:0; }
+
     .finding-stats strong { display:block; font-size:27px; }
+
     .finding-stats span { font-size:12px; }
+
     .finding-stats .red-text { color:var(--critical); }
+
     .coverage-track { height:8px; width:80px; background:#dedfd8; border-radius:10px; overflow:hidden; display:inline-block; margin-right:8px; }
+
     .coverage-track i { display:block; height:100%; background:var(--success); border-radius:10px; }
+
     .coverage-track.warning i { background:#efba37; }
+
     .handoff-items { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:0 14px 14px; }
+
     .handoff-item { font-size:11px; border-right:1px solid var(--border); padding-right:8px; }
+
     .handoff-item:last-child { border:0; }
+
     .handoff-item strong { display:block; margin:4px 0; }
+
     .handoff-item .status { white-space:normal; }
+
     .monitor-content { padding:0 14px 14px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+
     .monitor-content strong { display:block; font-size:27px; color:var(--brand); }
+
     .monitor-content span { font-size:12px; }
+
     .overview-footer { display:flex; flex-wrap:wrap; gap:14px; align-items:center; font-size:11px; margin-top:10px; }
+
     .overview-footer span { display:flex; align-items:center; gap:5px; }
+
     .overview-footer i { width:9px; height:9px; background:var(--success); border-radius:50%; }
+
     .overview-footer .warn i { background:#e3ab18; }
+
     .overview-footer .block i { background:var(--critical); }
-    @media(max-width:1250px) { .app { grid-template-columns:220px minmax(0,1fr); }.account,.workspace-label { display:none; }.summary-card { padding:12px; gap:10px; }.summary-icon { width:36px; height:36px; }.hero-copy h1 { font-size:28px; }.deployment-hero { display:none; }.hero-copy { max-width:80%; }.summary-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.overview-grid { grid-template-columns:1fr; } }
-    @media(max-width:768px) { .app { display:block; }.nav { display:none; }.topbar { flex-wrap:wrap; padding:10px 14px; }.global-search { max-width:none; order:2; flex-basis:100%; }.top-actions { width:100%; justify-content:space-between; }.avatar { display:none; }.mobile-nav { top:0; }.topbar { position:relative; }.segmented { display:none; }.overview-hero { min-height:200px; margin:0 -14px 12px; padding:12px 14px; }.hero-copy { max-width:100%; }.hero-copy h1 { font-size:25px; }.hero-copy > p { font-size:14px; }.overview-hero > img { top:0; height:100%; width:100%; opacity:.18; mask-image:none; }.hero-meta { gap:10px; }.hero-meta > div { padding-right:10px; }.summary-card { min-height:115px; }.summary-card .value { font-size:26px; }.summary-card.blue .value { font-size:18px !important; }.summary-icon { display:none; }.summary-card p { font-size:11px; }.overview-workflow { grid-template-columns:1fr; gap:14px; }.overview-step { display:flex; align-items:center; gap:14px; text-align:left; }.workflow-dot { margin:0; }.overview-step::before { display:none; }.handoff-items { grid-template-columns:1fr; }.handoff-item { border:0; }.panel-head h2 { font-size:15px; }.overview-footer { gap:8px; } }
+    @media(max-width:1250px) { .summary-grid {grid-template-columns:repeat(2,minmax(0,1fr));}.overview-grid {grid-template-columns:1fr;} }
+    @media(max-width:768px) { .summary-icon {display:none;}.handoff-items {grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
 <div class="app">
-  <aside class="nav" aria-label="Primary navigation"><div class="brand"><div class="brand-row"><svg class="brand-logo" viewBox="0 0 44 44" aria-hidden="true"><path fill="#063e33" d="M4 14 17 2h14l-8 8h-5L12 16v10l-8 8zM40 30 27 42H13l8-8h5l6-6V18l8-8z"/><path fill="#182a2b" d="m12 30 18-18 4 4-18 18z"/></svg><div><strong>SentinelGate</strong><small>AI AGENT ASSURANCE</small></div></div></div><div class="nav-group"><div class="nav-label">Operations</div><button data-view="overview" class="active"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v11h-6v-7H9v7H3z"/></svg><span>Overview</span></button><button data-view="queue" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2-3h9v16H3z"/></svg><span>Projects</span></button><button data-view="evals" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18h16M9 16v-4m5 4V7m5 9v-6"/></svg><span>Evaluations</span></button><button data-view="runtime" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg><span>Runtime controls</span></button><button data-view="effects" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h17m-4-4 4 4-4 4M21 17H4m4-4-4 4 4 4"/></svg><span>Reconciliation</span></button><button data-view="handoff" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg><span>Security Handoff</span></button><button data-view="project" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 10 18H2zM12 9v5m0 3v1"/></svg><span>Findings</span></button></div><div class="nav-group"><div class="nav-label">Resources</div><button data-view="project" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 6v9l-10 5-10-5V8zM2 8l10 6 10-6M12 14v8"/></svg><span>Acceptance record</span></button><button data-view="runtime" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 6v9l-10 5-10-5V8zM2 8l10 6 10-6M12 14v8"/></svg><span>Tools & Connections</span></button><button data-view="settings" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg><span>Policies</span></button><button data-view="handoff" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg><span>Reports</span></button><button data-view="ledger" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg><span>Audit & Logs</span></button></div><div class="nav-group"><div class="nav-label">Administration</div><button data-view="settings" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="m9 3-1 3-3 1-2 3 2 2-1 3 2 3h3l3 3 3-3h3l2-3-1-3 2-2-2-3-3-1-1-3z"/></svg><span>Settings</span></button></div><div class="deployment"><strong><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg>Deployment</strong><b>Demo workspace</b><dl><dt>Environment</dt><dd>Sample records</dd><dt>Connections</dt><dd>None</dd><dt>Production writes</dt><dd>Blocked</dd></dl></div></aside>
+  <aside class="nav" aria-label="Primary navigation"><div class="brand"><div class="brand-row"><svg class="brand-logo" viewBox="0 0 44 44" aria-hidden="true"><path fill="#063e33" d="M4 14 17 2h14l-8 8h-5L12 16v10l-8 8zM40 30 27 42H13l8-8h5l6-6V18l8-8z"/><path fill="#182a2b" d="m12 30 18-18 4 4-18 18z"/></svg><div><strong>SentinelGate</strong><small>AI AGENT ASSURANCE</small></div></div></div><div class="nav-group"><div class="nav-label">Operations</div><button data-view="overview" class="active"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v11h-6v-7H9v7H3z"/></svg><span>Overview</span></button><button data-view="queue" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2-3h9v16H3z"/></svg><span>Projects</span></button><button data-view="evals" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18h16M9 16v-4m5 4V7m5 9v-6"/></svg><span>Evaluations</span></button><button data-view="runtime" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg><span>Runtime controls</span></button><button data-view="effects" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h17m-4-4 4 4-4 4M21 17H4m4-4-4 4 4 4"/></svg><span>Reconciliation</span></button><button data-view="handoff" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg><span>Security Handoff</span></button><button data-view="project" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 10 18H2zM12 9v5m0 3v1"/></svg><span>Findings</span></button></div><div class="nav-group"><div class="nav-label">Supporting views</div><button data-view="dashboards"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg><span>Dashboards</span></button><button data-view="ledger"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h6"/></svg><span>Audit & Logs</span></button></div><div class="nav-group"><div class="nav-label">Administration</div><button data-view="settings" class=""><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="m9 3-1 3-3 1-2 3 2 2-1 3 2 3h3l3 3 3-3h3l2-3-1-3 2-2-2-3-3-1-1-3z"/></svg><span>Settings</span></button></div><div class="nav-footer">Public demo. Synthetic records only.</div></aside>
 
   <div class="shell">
     <header class="topbar"><div class="global-search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></svg><input id="global-search" aria-label="Search projects, evaluations, findings, or policies" placeholder="Search projects, evaluations, findings, or policies…"/><kbd>Ctrl K</kbd><div id="search-results" hidden></div></div><div class="top-actions"><span class="demo-badge">DEMO DATA</span><span class="workspace-label">SentinelGate Lab</span><span class="avatar">FA</span><div class="account"><strong>Fahad M Alqahtani</strong><span>Platform Admin</span></div><button class="btn quiet" id="exportBtn">Export review</button></div></header>
@@ -298,10 +378,10 @@
       <button data-view="project">Project</button>
       <button data-view="evals">Evals</button>
       <button data-view="runtime">Runtime</button>
-      <button data-view="handoff">Handoff</button>
+      <button data-view="handoff">Handoff</button><button data-view="dashboards">Dashboards</button>
     </div>
 
-    <main><div class="breadcrumb">Home <span>/</span> <strong id="crumb">Overview</strong></div><section id="overview" class="view active" aria-labelledby="overview-title"></section>
+    <main><div class="breadcrumb">Home <span>/</span> <strong id="crumb">Overview</strong></div><section id="overview" class="view active" aria-labelledby="overview-title"></section><section id="dashboards" class="view" aria-labelledby="dashboards-title"></section>
       <section id="queue" class="view" aria-labelledby="queue-title"></section>
       <section id="project" class="view" aria-labelledby="project-title"></section>
       <section id="evals" class="view" aria-labelledby="evals-title"></section>
@@ -515,7 +595,18 @@
   function renderOverview(){
     const overview=document.querySelector('#overview');
     const workflow=[['Source inspection','Verified','done'],['Tool contracts','Verified','done'],['Judgment evals','Review required','now'],['Runtime controls','Ready for review',''],['Cyber handoff','Pending','']];
-    overview.innerHTML=`<div class="overview-hero"><img src="campus.png" alt="Modern campus at sunset"/><div class="hero-copy"><h1 id="overview-title">Agent Acceptance & Cybersecurity Review</h1><p>Evaluate agent behavior, tool usage, and real effects before promotion.</p><div class="hero-meta"><div><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span><small>Last evidence change</small><strong>30 Sep 2026 14:09</strong></span></div><div><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2-3h9v16H3z"/></svg><span><small>Active project</small><strong>SchemaProof demo</strong></span></div><div class="capability">C2 — PROPOSE ONLY</div></div></div><div class="deployment-hero"><strong>Demo deployment boundary</strong><p>No production connections</p><p>Synthetic evidence only</p><p>Write capability blocked</p><p>Sample decisions recorded</p></div></div>
+    overview.innerHTML=`<div class="overview-hero"><img src="campus.png" alt="Modern campus at sunset"/><div class="hero-copy"><h1 id="overview-title">Agent Acceptance & Cybersecurity Review</h1><p>Evaluate agent behavior, tool usage, and real effects before promotion.</p><div class="hero-meta"><div><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span><small>Last evidence change</small><strong>30 Sep 2026 14:09</strong></span></div><div><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2-3h9v16H3z"/></svg><span><small>Active project</small><strong>SchemaProof demo</strong></span></div><div class="capability">C2 — PROPOSE ONLY</div></div></div></div>
+    <div class="attention-strip"><div><strong>SchemaProof needs two review decisions</strong><p>Resolve the empty-result behavior and confirm the write boundary before Cybersecurity handoff.</p></div><button class="btn primary" data-view="project">Continue review</button></div>
+    <section class="section"><div class="section-head"><div><h2>Acceptance workflow</h2><p>SchemaProof demo · current stage: judgment review</p></div></div><div class="overview-workflow">${workflow.map((r,i)=>`<div class="overview-step ${r[2]}"><div class="workflow-dot">${r[2]==='done'?'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>':''}</div><div><strong>${r[0]}</strong><span>${r[1]}</span></div></div>`).join('')}</div></section>
+    <section class="section"><div class="section-head"><div><h2>Projects</h2><p>Four sample projects and their next review needs.</p></div><button class="link" data-view="queue">Open project queue</button></div><div class="table-wrap"><table><thead><tr><th>Project</th><th>Current stage</th><th>Status</th><th>Needs attention</th></tr></thead><tbody>${demoProjects.map(p=>`<tr><td><div class="row-title">${p.name==='SchemaProof demo'?'<button class="project-link" data-view="project">SchemaProof demo</button>':p.name}</div><div class="row-sub">${p.type}</div></td><td>${p.stage}</td><td>${status(p.status)}</td><td>${p.blocker}</td></tr>`).join('')}</tbody></table></div></section>
+    <div class="footer-note">Demo workspace · synthetic records · production writes blocked. Evidence and controls are available in their dedicated review screens.</div>`;
+
+  }
+
+  function renderDashboards(){
+    const overview=document.querySelector('#dashboards');
+    const workflow=[['Source inspection','Verified','done'],['Tool contracts','Verified','done'],['Judgment evals','Review required','now'],['Runtime controls','Ready for review',''],['Cyber handoff','Pending','']];
+    overview.innerHTML=head('dashboards-title','Assurance dashboards','Supporting views of evaluation coverage, recorded intents, findings, effects, and handoff readiness.') + `
     <div class="summary-grid"><div class="summary-card red"><div class="summary-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 10 18H2zM12 9v5m0 3v1"/></svg></div><div><h2>Open findings</h2><div class="value">2</div><p>Judgment & write boundary</p><small>Requires review before promotion</small></div></div><div class="summary-card amber"><div class="summary-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg></div><div><h2>Needs evaluation review</h2><div class="value">2</div><p>1 failed · 1 review required</p><small>Five sample judgment cases</small></div></div><div class="summary-card"><div class="summary-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg></div><div><h2>Capability level</h2><div class="value">C2</div><p>Propose only</p><small>Production writes blocked</small></div></div><div class="summary-card blue"><div class="summary-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg></div><div><h2>Cyber handoff readiness</h2><div class="value" style="font-size:22px;margin-top:7px">Review required</div><p>J-032 & CAP-004 unresolved</p><small>Independent approval pending</small></div></div></div>
     <div class="overview-grid"><div class="overview-column"><section class="panel"><div class="panel-head"><h2>Project Workflow</h2><div class="segmented" aria-label="Workflow orientation"><button data-orientation="horizontal" aria-pressed="true">Horizontal</button><button data-orientation="vertical" aria-pressed="false">Vertical</button></div></div><div class="overview-workflow">${workflow.map((r,i)=>`<div class="overview-step ${r[2]}"><div class="workflow-dot">${r[2]==='done'?'<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>':''}</div><div><strong>${r[0]}</strong><span>${r[1]}</span></div></div>`).join('')}</div></section>
     <section class="panel"><div class="panel-head"><h2>Recent Agent Intents <small>(Demo)</small></h2><button class="btn quiet" data-view="ledger">View all <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><div class="table-wrap"><table><thead><tr><th>Time</th><th>Run</th><th>Agent action / Tool</th><th>Capability</th><th>Result</th></tr></thead><tbody>${ledgerRows.map(r=>`<tr><td class="mono">${r[0]}</td><td class="mono">${r[1]}</td><td>${r[2]}</td><td>${status(r[3])}</td><td>${status(r[4])}</td></tr>`).join('')}</tbody></table></div></section>
@@ -526,18 +617,19 @@
     <section class="panel"><div class="panel-head"><h2>Cybersecurity Handoff <small>(Demo)</small></h2><button class="btn quiet" data-view="handoff">View pack <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><div class="handoff-items"><div class="handoff-item"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h9l5 5v13H5zM14 3v6h5M8 13h8m-8 4h6"/></svg><strong>Evidence manifest</strong>${status('Ready for review')}</div><div class="handoff-item"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18h16M9 16v-4m5 4V7m5 9v-6"/></svg><strong>Judgment results</strong>${status('Review required')}</div><div class="handoff-item"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg><strong>Residual risks</strong>${status('Review required')}</div></div><div style="padding:0 14px 14px"><button class="btn primary" data-view="handoff">Prepare handoff pack <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></section></div></div><div class="overview-footer"><b>Status Guide:</b><span><i></i>Verified: evidence checked</span><span class="warn"><i></i>Review: decision required</span><span class="block"><i></i>Blocked: cannot proceed</span><span>All data shown is DEMO DATA</span></div>`;
   }
 
-  renderOverview(); renderQueue(); renderProject(); renderEvals(); renderRuntime(); renderLedger(); renderEffects(); renderHandoff(); renderSettings();
+
+  renderDashboards(); renderOverview(); renderQueue(); renderProject(); renderEvals(); renderRuntime(); renderLedger(); renderEffects(); renderHandoff(); renderSettings();
 
   function show(name){
     document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===name));
     document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name && (b.closest('.nav') || b.closest('.mobile-nav'))));
-    const label = ({overview:'Overview',queue:'Projects',project:'Project review',evals:'Judgment evals',runtime:'Runtime controls',ledger:'Decision ledger',effects:'Effect checks',handoff:'Cyber handoff',settings:'Policy & settings'})[name] || 'SentinelGate';
+    const label = ({overview:'Overview',dashboards:'Dashboards',queue:'Projects',project:'Project review',evals:'Judgment evals',runtime:'Runtime controls',ledger:'Decision ledger',effects:'Effect checks',handoff:'Cyber handoff',settings:'Policy & settings'})[name] || 'SentinelGate';
     document.querySelector('#crumb').textContent = label;
     window.scrollTo({top:0,behavior:'instant'});
   }
 
   document.addEventListener('click', e=>{
-    const orientation=e.target.closest('[data-orientation]'); if(orientation){document.querySelector('.overview-workflow').classList.toggle('vertical',orientation.dataset.orientation==='vertical');document.querySelectorAll('[data-orientation]').forEach(b=>b.setAttribute('aria-pressed',String(b===orientation)));}
+    const orientation=e.target.closest('[data-orientation]'); if(orientation){orientation.closest('.panel').querySelector('.overview-workflow').classList.toggle('vertical',orientation.dataset.orientation==='vertical');orientation.closest('.segmented').querySelectorAll('[data-orientation]').forEach(b=>b.setAttribute('aria-pressed',String(b===orientation)));}
     const v = e.target.closest('[data-view]'); if(v){ show(v.dataset.view); }
     const open = e.target.closest('[data-open]'); if(open){ show(open.dataset.open); }
     if(e.target.id==='downloadPack'){
@@ -582,7 +674,7 @@
   });
   document.querySelectorAll('tr[data-open]').forEach(r=>r.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();show(r.dataset.open);} }));
   const search=document.querySelector('#global-search');
-  const destinations=[['Overview','overview'],['Projects','queue'],['SchemaProof acceptance record','project'],['Judgment evaluations J-032','evals'],['Runtime controls and tools','runtime'],['Decision ledger audit logs','ledger'],['Effect checks reconciliation','effects'],['Cybersecurity handoff reports','handoff'],['Policies and settings','settings']];
+  const destinations=[['Overview','overview'],['Assurance dashboards','dashboards'],['Projects','queue'],['SchemaProof acceptance record','project'],['Judgment evaluations J-032','evals'],['Runtime controls and tools','runtime'],['Decision ledger audit logs','ledger'],['Effect checks reconciliation','effects'],['Cybersecurity handoff reports','handoff'],['Policies and settings','settings']];
   search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();const results=document.querySelector('#search-results');results.hidden=!q;results.innerHTML=destinations.filter(([label])=>label.toLowerCase().includes(q)).map(([label,id])=>`<button data-view="${id}">${label}</button>`).join('')||'<p>No matching pages. Try evaluations or projects.</p>';});
   document.querySelector('#search-results').addEventListener('click',e=>{if(e.target.closest('[data-view]')){search.value='';document.querySelector('#search-results').hidden=true;}});
   document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();search.focus();}if(e.key==='Escape')document.querySelector('#search-results').hidden=true;});
