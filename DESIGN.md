@@ -1396,10 +1396,61 @@ Keep one primary task per page. Export remains secondary. Project links explicit
 ## Accepted screenshot reference redesign
 
 User-approved reference: codex-clipboard-b8cd16a6-24f6-4ffe-a1af-805f9cb41988.png. The overview uses a 254px icon navigation rail, compact global search header, sunset campus photo, four semantic summary panels, and a two-column evidence workspace. Palette: canvas #F5F4F0, surface #FBFAF7, ink #101E27, brand #00533E. Preserve existing sample records and five acceptance stages; do not copy unsupported metrics, dates, live-state badges, on-premises assertions, or language controls from the image. Search routes to existing sections; workflow orientation is an explicit local preference. Reuse the same tokens and controls across detail screens. Stack panels on tablet; preserve table scrolling and vertical workflow on mobile.
+## Asymmetric evidence composition
+
+The overview may use an asymmetric grid only when span reflects information priority, not a decorative bento pattern. The acceptance blocker and capability boundary come first; judgment evidence receives the largest area; runtime and effect assurance are secondary; Cybersecurity handoff spans the full review width. Do not use marketing feature cards, animated globes, image stacks, stock-media tiles, or decorative motion.
 
 
-## Focused review layout
 
-User requested fewer dashboards. Replace the overview KPI cards and multi-panel monitoring layout with a single blocker strip, an unboxed acceptance workflow, and the project queue. Keep evaluation, ledger, effect, and handoff evidence on dedicated screens. Remove duplicate resource navigation and deployment tiles. Retain the reference palette, icons, and campus header.
+## Approved reference palette — 2 Oct 2026
 
-Dashboard panels are retained on a separate Dashboards page under Supporting views in the left navigation. The Overview stays focused on the review action, workflow, and project table.
+The provided SentinelGate screenshot is the visual color authority for the light theme. Use these tokens:
+
+```css
+--canvas: #F8F8F8;
+--sidebar: #F5F5F3;
+--surface: #FBFBFB;
+--surface-subtle: #F3F5F4;
+--ink: #111827;
+--text-secondary: #66706C;
+--text-muted: #89918E;
+--border: #E5E7E4;
+--border-strong: #D4D8D5;
+--brand: #09322A;
+--brand-hover: #0B4036;
+--brand-soft: #E8F1ED;
+--success: #189064;
+--success-soft: #E8F5EF;
+--warning: #C58A19;
+--warning-soft: #FBF0D6;
+--critical: #D83943;
+--critical-soft: #FBE8E9;
+--info: #3F8BCB;
+--info-soft: #EAF3FB;
+```
+
+The active navigation item and primary action use the deep green. Green, amber, red, and blue remain semantic. Do not replace the light neutral canvas with navy, gradients, glow, or glass effects.
+
+---
+
+## Approved dashboard reference — 2 Oct 2026
+
+The current approved SentinelGate overview is a light enterprise admin dashboard with:
+
+- pale gray application canvas and sidebar;
+- near-white bordered cards with restrained shadows;
+- top utility header with back/forward, search, notification, primary New action and menu;
+- four metric cards using a three-part anatomy: primary metric, compact semantic secondary state, details footer;
+- main two-column content split with a large trend panel and narrower assurance path;
+- list-based Agents Overview and Environment Status panels;
+- Recent Findings table and compact Quick Stats cards;
+- dark teal/green as the primary brand/action color;
+- green, blue, amber and red used only for semantic state;
+- no gradient text, glow, glassmorphism, decorative AI imagery, or floating neon effects.
+
+This reference is the active visual authority for the Overview screen. Do not reinterpret it into a different dashboard style without explicit approval.
+
+
+## Retained campus photograph
+
+Use the supplied card-dashboard3 implementation with the existing campus.png photograph retained in the upper-right header. The image remains separate from code-native heading text and scales responsively. The uploaded dashboard sample data and interactions are preserved.

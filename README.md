@@ -1,23 +1,19 @@
-# SentinelGate public demo
+# SentinelGate dashboard reference implementation
 
-A static public demo of the SentinelGate agent acceptance and assurance workspace.
-
-## Design authority
-
-`DESIGN.md` is the canonical visual design contract. UI changes must follow it.
+Static GitHub Pages build implementing the approved light enterprise dashboard reference.
 
 ## Public-demo boundary
 
-- Synthetic records only
+- Demonstration records only
 - No production connections
 - No credentials
-- No customer or internal evidence
+- No real customer/internal evidence
 - No operational agent execution
 
-## Local preview
+## Preview
 
 ```powershell
 python -m http.server 8787 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8787`.
+Open `http://127.0.0.1:8787/`.
